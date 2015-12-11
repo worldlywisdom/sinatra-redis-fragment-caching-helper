@@ -18,30 +18,30 @@ Installation
 
 Place the helper in a directory (like <code>/app</code> or <code>/lib</code>), then include it in your main Sinatra application. I usually use something like:
 
-  ### Require all app files
-  Dir['./app/*.rb'].each { |f| require(f) }
+    ### Require all app files
+    Dir['./app/*.rb'].each { |f| require(f) }
 
 Then, copy the commands in Rakefile into your application. Two commands are available, which will allow you to manage keys in the cache:
 
-  cache:reset # Remove all keys from the cache
-  cache:key:delete key="yourkey" # Remove a specific key from the cache
+    cache:reset # Remove all keys from the cache
+    cache:key:delete key="yourkey" # Remove a specific key from the cache
 
 How To Use
 ----------
 
 Usage in ERB views or partials:
 
-  <% cache key: "cache-key", expires: 86400, bypass: false do %>
-    This is the block to evaluate.
-  <% end %>
+    <% cache key: "cache-key", expires: 86400, bypass: false do %>
+      This is the block to evaluate.
+    <% end %>
 
 Usage in Sinatra routes:
 
-  get '/' do
-    cache key: "cache-key", expires: 86400, bypass: false do
-      This is the block to evaluate.
+    get '/' do
+      cache key: "cache-key", expires: 86400, bypass: false do
+        This is the block to evaluate.
+      end
     end
-  end
 
 Connecting To Redis
 -------------------
