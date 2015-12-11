@@ -46,7 +46,7 @@ Usage in Sinatra routes:
 Connecting To Redis
 -------------------
 
-The helper relies on <code>ENV["REDIS_URL"]</code> to connect to Redis. This should automatically allow you to Redis in development, then switch over production seamlessly.
+The helper relies on <code>ENV["REDIS_URL"]</code> to connect to Redis. This should automatically allow you to Redis in development, then switch over to production seamlessly.
 
 Credits
 -------
